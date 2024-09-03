@@ -1,0 +1,7 @@
+For each run:
+
+ 2040  ncap2 -O -s "where(thickness*910/1028+bedTopography<0) thickness=0.0" mali_2015.nc mali_grd_2015.nc
+ 2041  ncap2 -O -s "where(thickness*910/1028+bedTopography<0) thickness=0.0" mali_2060.nc mali_grd_2060.nc
+ 2042  ncap2 -O -s "where(thickness*910/1028+bedTopography<0) thickness=0.0" mali_2100.nc mali_grd_2100.nc
+ 2043  ncap2 -O -s "where(thickness*910/1028+bedTopography<0) thickness=0.0" mali_2200.nc mali_grd_2200.nc
+ 2044  ncap2 -O -s "where(thickness*910/1028+bedTopography<0) thickness=0.0" mali_2300.nc mali_grd_2300.nc
