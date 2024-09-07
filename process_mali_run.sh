@@ -23,7 +23,7 @@ for yr in '2015' '2060' '2100' '2200' '2300'; do
    ncremap -m $MAPFILE -i mali_grd_${yr}.nc -o mali_grd_remapped_${yr}.nc  --add_fll
    #ncatted -a _FillValue,,o,f,0.0 mali_grd_remapped_${yr}.nc
    #ncatted -a _FillValue,,d,, mali_grd_remapped_${yr}.nc
-   python /lustre/scratch5/mhoffman/SLC_AIS_FOR_TIDES_20240830/MALI_data__processing/mali_output/reformat_SL_inputdata.py . mali_grd_remapped_${yr}.nc mali_grd_remapped_${yr}.nc 1
+   python ../reformat_SL_inputdata.py . mali_grd_remapped_${yr}.nc mali_grd_remapped_${yr}.nc 1
 
    ncatted -a _FillValue,,o,f,0.0 grdice0.nc
    ncatted -a _FillValue,,d,, grdice0.nc
