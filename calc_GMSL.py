@@ -14,6 +14,7 @@ for yr in yrs:
    
    f=Dataset(fname, 'r')
    a=f.variables['area'][:]
+   lat=f.variables['lat'][:]
    r=6357e3 # m
    am2 = a * r**2
    f.close()
@@ -38,5 +39,8 @@ for yr in yrs:
    SLC = tgrid0-tgrid1
 
    GMSLC = (beta * ocean * SLC * am2).sum() / (beta * ocean * am2).sum()
-   print(yr, GMSLC)
+
+   lat45=np.nonzero(lat>-45.0)[0]
+   GMSLC45 = (beta[lat45,:] * ocean[lat45,:] * SLC[lat45,:] * am2[lat45,:]).sum() / (beta[lat45,:] * ocean[lat45,:] * am2[lat45,:]).sum()
+   print(yr, GMSLC, GMSLC45)
 
